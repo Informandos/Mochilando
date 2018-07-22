@@ -15,22 +15,22 @@ import java.util.logging.Logger;
  *
  * @author Juliana
  */
-public class Conexao extends DadosAutenticarConexao {
+public class Conexao extends DadosAutenticarConexao implements ConexaoFactory {
     
    private final static String bdDriver = "org.postgresql.Driver";
-   public Connection conexao;
 
     public Conexao() {
     }
-
-    public Connection getConnection() throws ClassNotFoundException, SQLException {
+    
+    @Override
+    public Connection getConexao() throws ClassNotFoundException, SQLException {
         Class.forName(bdDriver);
         return DriverManager.getConnection(URL, USUARIO, SENHA);
     }
     
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        Conexao con = new Conexao();
-        con.getConnection();
+        ConexaoFactory cf = new Conexao();            
+        cf.getConexao();  
     }
 }
 
