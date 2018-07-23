@@ -1,6 +1,5 @@
 
-
-package Controller.servlet;
+package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,18 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(name = "ServletLogin", urlPatterns = {"/ServletLogin"})
-public class ServletLogin extends HttpServlet {
+@WebServlet(name = "ServletCadastro", urlPatterns = {"/ServletCadastro"})
+public class ServletCadastro extends HttpServlet {
 
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-        String email = request.getParameter("email");
-        String senha = request.getParameter("senha");
-            System.out.println(email);
-            System.out.println(senha);
+            String nome = request.getParameter("nome");
+            String email = request.getParameter("e-mail");
+            String senha = request.getParameter("senha");
+            String confirm = request.getParameter("confirmacao");
+            
         }
     }
 

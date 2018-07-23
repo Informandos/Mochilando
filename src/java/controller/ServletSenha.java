@@ -1,5 +1,5 @@
 
-package Controller.servlet;
+package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,14 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(name = "ServletRecuperacao", urlPatterns = {"/ServletRecuperacao"})
-public class ServletRecuperacao extends HttpServlet {
+@WebServlet(name = "ServletSenha", urlPatterns = {"/ServletSenha"})
+public class ServletSenha extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-             String email = request.getParameter("email");
+            String senha = request.getParameter("senha");
+            String confirm = request.getParameter("confirmarSenha");
+             
         }
     }
 
