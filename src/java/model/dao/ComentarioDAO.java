@@ -69,96 +69,7 @@ public class ComentarioDAO {
 
         return seqComentario;
     }
-
-    @Override
-    public boolean update(Comentario comentario) throws ExcessaoPersistencia {
-        try {
-
-            Connection conexao = GerenciadorConexao.getInstance().getConexao();
-
-            String sql = "UPDATE comentario "
-                    + " SET COD_IDUser = ?,"
-                    + "     TXT_comentario = ?,"
-                    + " WHERE COD_questao = ? AND COD_discussao = ? AND SEQ_comentario = ?;";
-
-            PreparedStatement pstmt = conexao.prepareStatement(sql);
-            pstmt.setLong(1, comentario.getUserId());
-            pstmt.setString(2, comentario.getTextComentario());
-            pstmt.setLong(3, comentario.getQuestionId());
-            pstmt.setLong(4, comentario.getDiscussionId());
-            pstmt.setLong(5, comentario.getComentarioSeq());
-            pstmt.executeUpdate();
-
-            pstmt.close();
-            conexao.close();
-
-            return true;
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new ExcessaoPersistencia(e);
-        }        
-    }
-
-    @Override
-    public boolean remove(Long COD_questao, Long COD_discussao, Long comentarioSeq) throws ExcessaoPersistencia {
-        try {
-            Connection conexao = GerenciadorConexao.getInstance().getConexao();
-
-            String sql = "DELETE FROM comentario "
-                    + "WHERE COD_questao = ? AND COD_discussao = ? AND SEQ_comentario = ?;";
-            
-            PreparedStatement pstmt = conexao.prepareStatement(sql);
-            pstmt.setLong(1, COD_questao);
-            pstmt.setLong(2, COD_discussao);
-            pstmt.setLong(3, comentarioSeq);
-            pstmt.executeUpdate();
-
-            pstmt.close();
-            conexao.close();
-
-            return true;
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new ExcessaoPersistencia(e);
-        }
-    }
-
-    @Override
-    public Comentario getComentarioBySeq(Long COD_questao, Long COD_discussao, Long comentarioSeq) throws ExcessaoPersistencia {
-        try {
-            Connection conexao = GerenciadorConexao.getInstance().getConexao();
-
-            String sql = "SELECT * FROM comentario WHERE COD_questao = ? AND COD_discussao = ? AND SEQ_comentario = ?;";
-            
-            PreparedStatement pstmt = conexao.prepareStatement(sql);
-            pstmt.setLong(1, COD_questao);
-            pstmt.setLong(2, COD_discussao);
-            pstmt.setLong(3, comentarioSeq);
-            ResultSet rs = pstmt.executeQuery();
-
-            Comentario comentario = new Comentario();
-            if (rs.next()) {
-                comentario.setQuestionId(COD_questao);
-                comentario.setDiscussionId(COD_discussao);
-                comentario.setComentarioSeq(comentarioSeq);
-                comentario.setUserId(rs.getLong("COD_IDUser"));
-                comentario.setTextComentario(rs.getString("TXT_comentario"));
-            }
-
-            rs.close();
-            pstmt.close();
-            conexao.close();
-
-            return comentario;
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new ExcessaoPersistencia(e);
-        }
-    }
     
-    @Override
     public List<Comentario> getCommentariesByForumId(Long forumId, Long questionId) throws ExcessaoPersistencia{
         try {
             Connection conexao = GerenciadorConexao.getInstance().getConexao();
@@ -176,11 +87,6 @@ public class ComentarioDAO {
             if (rs.next()) {
                 do {
                     Comentario comentario = new Comentario();
-                    comentario.setQuestionId(questionId);
-                    comentario.setDiscussionId(forumId);
-                    comentario.setComentarioSeq(rs.getLong("SEQ_comentario"));
-                    comentario.setUserId(rs.getLong("COD_userId"));
-                    comentario.setTextComentario(rs.getString("TXT_comentario"));
                     
                     list.add(comentario);
                 } while (rs.next());
@@ -193,7 +99,7 @@ public class ComentarioDAO {
             return list;
         } catch (Exception e) {
             e.printStackTrace();
-            throw new ExcessaoPersistencia(e);
+            throw new ExcessaoPersistencia("Erro");
         }
     }
  
@@ -214,13 +120,6 @@ public class ComentarioDAO {
             if (rs.next()) {
                 list = new ArrayList<>();
                 do{
-                    comentario.setQuestionId(rs.getLong("COD_questao"));
-                    comentario.setDiscussionId(rs.getLong("COD_discussao"));
-                    comentario.setComentarioSeq(rs.getLong("COD_comentario"));
-                    comentario.setUserId(rs.getLong("COD_IDUser"));
-                    comentario.setTextComentario(rs.getString("TXT_comentario"));
-                    
-                    list.add(comentario);
                 } while (rs.next());
             }
             
@@ -232,7 +131,7 @@ public class ComentarioDAO {
             
         } catch (Exception e) {
             e.printStackTrace();
-            throw new ExcessaoPersistencia(e);
+            throw new ExcessaoPersistencia("a");
         }
     }    
 
