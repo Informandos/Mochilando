@@ -14,17 +14,17 @@ import java.util.Date;
 public class Comentario {
     private String codDiario;
     private String codAutorComentario;
-    private String codComentario;
+    private String seqComentario;
     private Date datPublicacao;
     private String txtComentario;
 
     public Comentario() {
     }
 
-    public Comentario(String codDiario, String codAutorComentario, String codComentario, Date datPublicacao, String txtComentario) {
+    public Comentario(String codDiario, String codAutorComentario, String seqComentario, Date datPublicacao, String txtComentario) {
         this.codDiario = codDiario;
         this.codAutorComentario = codAutorComentario;
-        this.codComentario = codComentario;
+        this.seqComentario = seqComentario;
         this.datPublicacao = datPublicacao;
         this.txtComentario = txtComentario;
     }
@@ -88,17 +88,17 @@ public class Comentario {
     }
 
     /**
-     * @return the codComentario
+     * @return the seqComentario
      */
-    public String getCodComentario() {
-        return codComentario;
+    public String getSeqComentario() {
+        return seqComentario;
     }
 
     /**
-     * @param codComentario the codComentario to set
+     * @param seqComentario the seqComentario to set
      */
-    public void setCodComentario(String codComentario) {
-        this.codComentario = codComentario;
+    public void setSeqComentario(String seqComentario) {
+        this.seqComentario = seqComentario;
     }
 
 }

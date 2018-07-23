@@ -11,9 +11,9 @@ package model.domain;
  */
 public class Atracao {
     
-    private String codAtracaoVisitada;
+    private String seqAtracao;
     private String codTipoAtracao;
-    private String codEstadoAtracao;
+    private String codCidadeAtracao;
     private String desAtracao;
     private double nroLatitude;
     private double nroLongitude;
@@ -21,10 +21,10 @@ public class Atracao {
     public Atracao() {
     }
 
-    public Atracao(String codAtracaoVisitada, String codTipoAtracao, String codEstadoAtracao, String desAtracao, double nroLatitude, double nroLongitude) {
-        this.codAtracaoVisitada = codAtracaoVisitada;
+    public Atracao(String seqAtracao, String codTipoAtracao, String codCidadeAtracao, String desAtracao, double nroLatitude, double nroLongitude) {
+        this.seqAtracao = seqAtracao;
         this.codTipoAtracao = codTipoAtracao;
-        this.codEstadoAtracao = codEstadoAtracao;
+        this.codCidadeAtracao = codCidadeAtracao;
         this.desAtracao = desAtracao;
         this.nroLatitude = nroLatitude;
         this.nroLongitude = nroLongitude;
@@ -32,17 +32,17 @@ public class Atracao {
     
 
     /**
-     * @return the codAtracaoVisitada
+     * @return the seqAtracao
      */
-    public String getCodAtracaoVisitada() {
-        return codAtracaoVisitada;
+    public String getSeqAtracao() {
+        return seqAtracao;
     }
 
     /**
-     * @param codAtracaoVisitada the codAtracaoVisitada to set
+     * @param seqAtracao the seqAtracao to set
      */
-    public void setCodAtracaoVisitada(String codAtracaoVisitada) {
-        this.codAtracaoVisitada = codAtracaoVisitada;
+    public void setSeqAtracao(String seqAtracao) {
+        this.seqAtracao = seqAtracao;
     }
 
     /**
@@ -60,17 +60,17 @@ public class Atracao {
     }
 
     /**
-     * @return the codEstadoAtracao
+     * @return the codCidadeAtracao
      */
-    public String getCodEstadoAtracao() {
-        return codEstadoAtracao;
+    public String getCodCidadeAtracao() {
+        return codCidadeAtracao;
     }
 
     /**
-     * @param codEstadoAtracao the codEstadoAtracao to set
+     * @param codCidadeAtracao the codCidadeAtracao to set
      */
-    public void setCodEstadoAtracao(String codEstadoAtracao) {
-        this.codEstadoAtracao = codEstadoAtracao;
+    public void setCodCidadeAtracao(String codCidadeAtracao) {
+        this.codCidadeAtracao = codCidadeAtracao;
     }
 
     /**
