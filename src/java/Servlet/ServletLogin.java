@@ -21,7 +21,8 @@ public class ServletLogin extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
-        
+            System.out.println(email);
+            System.out.println(senha);
         }
     }
 
