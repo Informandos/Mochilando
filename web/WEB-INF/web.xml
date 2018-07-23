@@ -1,12 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>VerificaNome </servlet-name>
-        <servlet-class>controller.VerificaNome</servlet-class>
+        <servlet-name>ServletCadastro</servlet-name>
+        <servlet-class>controller.ServletCadastro</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletLogin</servlet-name>
+        <servlet-class>controller.ServletLogin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletRecuperacao</servlet-name>
+        <servlet-class>controller.ServletRecuperacao</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletSenha</servlet-name>
+        <servlet-class>controller.ServletSenha</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>VerificaNome</servlet-name>
-        <url-pattern>/VerificaNome</url-pattern>
+        <servlet-name>ServletCadastro</servlet-name>
+        <url-pattern>/ServletCadastro</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletLogin</servlet-name>
+        <url-pattern>/ServletLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletRecuperacao</servlet-name>
+        <url-pattern>/ServletRecuperacao</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletSenha</servlet-name>
+        <url-pattern>/ServletSenha</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
