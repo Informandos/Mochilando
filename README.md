@@ -1,3 +1,2 @@
 # Mochilando
-Sistema Mochilando
-Parte WEB do sistema Mochilando.
+Esta é a parte WEB do sistema Mochilando.
