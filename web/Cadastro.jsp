@@ -11,7 +11,13 @@
         <h3>cadastro</h3>
         Nome<br>
          <input type="text" name="nome" Value="name"><br>
-        E-Mail<br>
+         Sobrenome<br>
+         <input type="text" name="sobrenome" Value="sobrename"><br>
+         Data de nascimento<br>
+         <input type="date" nome="data"><br>
+        Cidade<br>
+        <input type="text" nome="cidade"><br>
+         E-Mail<br>
         <input type="text" name="e-mail" Value="E-mail"><br>
         Senha<br>
         <input type="password" name="senha"><br>
