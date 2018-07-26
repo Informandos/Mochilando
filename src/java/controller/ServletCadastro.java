@@ -20,11 +20,16 @@ public class ServletCadastro extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             String nome = request.getParameter("nome");
             String email = request.getParameter("e-mail");
+            String cidade = request.getParameter("cidade");
+            String data = request.getParameter("data");
+            String sexo = request.getParameter("sexo");
             String senha = request.getParameter("senha");
             String confirm = request.getParameter("confirmacao");
             
         }
     }
+
+   
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

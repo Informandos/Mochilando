@@ -9,6 +9,7 @@
     <body>
         <form action="ServletCadastro" method="POST">
         <h3>cadastro</h3>
+        
         Nome<br>
          <input type="text" name="nome" Value="name"><br>
          Sobrenome<br>
@@ -19,13 +20,19 @@
         <input type="text" nome="cidade"><br>
          E-Mail<br>
         <input type="text" name="e-mail" Value="E-mail"><br>
+        sexo<br>
+        <input type="text" name="sexo" ><br>
+        
         Senha<br>
         <input type="password" name="senha"><br>
         confirme a senha<br>
         <input type="password" name="confirmacao"><br>
         <input type="radio" name="termos">Concordo com os
         <a href="Termosdeuso.jsp">Termos e Politica de privacidade</a><br>
+        Foto<br>
+        <input type="file" name="foto"><br>
         <input type="submit" value="Login">
+      
         </form>
         <div>
             <a href="recuperacaoDeSenha.jsp">Esqueci a senha</a><br>
