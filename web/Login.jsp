@@ -12,11 +12,11 @@
          <script type="text/javascript" language="JavaScript" src="js/webvalida.js"></script>
     </head>
     <body>
-        <form nome="Login" method="post">
+        <form name="Login" method="post">
         <h1>Login</h1>
-        E-Mail<br>
-        <input type="text" name="email" Value="E-mail" id="email"><br>
-        Senha<br>
+        <a> E-Mail</a><br>
+        <input type="text" id="email" name="email" ><br>
+        <a> Senha </a> <br>
         <input type="password" id="senha" name="senha"><br>
          <button type="button" onclick="validarCamposLogin()">Acessar</button>
         </form>
