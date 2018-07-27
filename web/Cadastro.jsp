@@ -16,6 +16,8 @@
          <input type="text" name="sobrenome" Value="sobrename"><br>
          Data de nascimento<br>
          <input type="date" nome="data"><br>
+         Estado(Sigla)<br>
+         <input type="text" nome="estado"><br>
         Cidade<br>
         <input type="text" nome="cidade"><br>
          E-Mail<br>
