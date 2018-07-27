@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.RequestDispatcher;
 
 /**
  *
@@ -29,6 +30,9 @@ public class sevletweb extends HttpServlet {
         
         if(acao.equals("Logar"))
            jsp = Login.execute(request);
+         //Redirecionando pagina
+        RequestDispatcher rd = request.getRequestDispatcher(jsp);
+        rd.forward(request, response);
         }
     }
 

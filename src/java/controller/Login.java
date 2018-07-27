@@ -1,9 +1,6 @@
 package controller;
 
 
-
-import model.dao.implementacao.UsuarioDAO;
-import model.dao.interfaces.InterfaceUsuarioDAO;
 import model.domain.Usuario;
 import model.service.implementacao.ManterUsuario;
 import model.service.interfaces.InterfaceManterUsuario;
@@ -30,11 +27,11 @@ public class Login {
             if (usr == null) {
                 String erro = "Usuario nao encontrado!";
                 request.setAttribute("erro", erro);
-                jsp = "/erro.jsp";
+                jsp = "/Login.jsp";
             } else {
                 request.getSession().setAttribute("cod_usuario", usr.getCodUsuario());
                 
-                jsp = "/teste.jsp";
+                jsp = "/Cadastro.jsp";
             }
 
         } catch (Exception e) {

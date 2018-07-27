@@ -3,7 +3,7 @@
  */
 
 function validarCamposLogin() {
-    var frm = document.frmLogin;
+    var frm = document.Login;
     var email = frm.email.value;
     var senha = frm.senha.value;
 
