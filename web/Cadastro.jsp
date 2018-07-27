@@ -31,8 +31,7 @@
         <input type="password" name="confirmacao"><br>
         <input type="radio" name="termos">Concordo com os
         <a href="Termosdeuso.jsp">Termos e Politica de privacidade</a><br>
-        Foto<br>
-        <input type="file" name="foto"><br>
+        
         <input type="submit" value="Login">
       
         </form>
