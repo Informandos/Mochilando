@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <form action="ServletLogin" method="POST">
+        <form action="Login" method="POST">
         <h1>Login</h1>
         E-Mail<br>
         <input type="text" name="e-mail" Value="E-mail"><br>

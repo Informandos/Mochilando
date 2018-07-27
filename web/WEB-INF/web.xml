@@ -6,7 +6,7 @@
     </servlet>
     <servlet>
         <servlet-name>ServletLogin</servlet-name>
-        <servlet-class>controller.ServletLogin</servlet-class>
+        <servlet-class>controller.Login</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ServletRecuperacao</servlet-name>
