@@ -16,8 +16,8 @@
         <input type="submit" value="Login">
         </form>
         <div>
-            <a href="recuperacaoDeSenha.jsp">Esqueci a senha</a><br>
-            <a href="cadastro.jsp">Cadastro</a>
+            <a href="RecuperacaoDeSenha.jsp">Esqueci a senha</a><br>
+            <a href="Cadastro.jsp">Cadastro</a>
         </div>
         <a href="Desenvolvedores.jsp">Desenvolvedores</a>
     </body>
