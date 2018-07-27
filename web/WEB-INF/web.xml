@@ -16,6 +16,10 @@
         <servlet-name>ServletSenha</servlet-name>
         <servlet-class>controller.ServletSenha</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>sevletweb</servlet-name>
+        <servlet-class>controller.sevletweb</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletCadastro</servlet-name>
         <url-pattern>/ServletCadastro</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>ServletSenha</servlet-name>
         <url-pattern>/ServletSenha</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sevletweb</servlet-name>
+        <url-pattern>/sevletweb</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

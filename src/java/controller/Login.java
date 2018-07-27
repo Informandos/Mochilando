@@ -1,4 +1,6 @@
-package br.cefetmg.inf.sisloc.controller;
+package controller;
+
+
 
 import model.dao.implementacao.UsuarioDAO;
 import model.dao.interfaces.InterfaceUsuarioDAO;
@@ -32,7 +34,7 @@ public class Login {
             } else {
                 request.getSession().setAttribute("cod_usuario", usr.getCodUsuario());
                 
-                jsp = "/menu.jsp";
+                jsp = "/teste.jsp";
             }
 
         } catch (Exception e) {
