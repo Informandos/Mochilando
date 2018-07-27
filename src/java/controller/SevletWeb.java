@@ -17,7 +17,7 @@ import javax.servlet.RequestDispatcher;
  *
  * @author User
  */
-public class sevletweb extends HttpServlet {
+public class SevletWeb extends HttpServlet {
  private String jsp = "";
   
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
