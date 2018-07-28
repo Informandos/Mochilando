@@ -32,7 +32,7 @@ public class CadastrarUsuario extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         String jsp = "";
+        String jsp = "";
         String nome = request.getParameter("nome");
         String sobrenome = request.getParameter("sobrenome");
         String data = request.getParameter("data");

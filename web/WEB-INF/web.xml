@@ -5,8 +5,8 @@
         <servlet-class>controller.ServletCadastro</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServletLogin</servlet-name>
-        <servlet-class>controller.Login</servlet-class>
+        <servlet-name>Logar</servlet-name>
+        <servlet-class>controller.Logar</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ServletRecuperacao</servlet-name>
@@ -29,10 +29,6 @@
         <url-pattern>/ServletCadastro</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServletLogin</servlet-name>
-        <url-pattern>/ServletLogin</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>ServletRecuperacao</servlet-name>
         <url-pattern>/ServletRecuperacao</url-pattern>
     </servlet-mapping>
@@ -47,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>ServletWeb</servlet-name>
         <url-pattern>/ServletWeb</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Logar</servlet-name>
+        <url-pattern>/Logar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
