@@ -9,6 +9,8 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import util.db.exception.ExcecaoNegocio;
+import util.db.exception.ExcecaoPersistencia;
 
 public class Login {
 
@@ -26,17 +28,16 @@ public class Login {
 
             if (usr == null) {
                 String erro = "Usuario nao encontrado!";
-                request.setAttribute("erro", erro);
                 
-                jsp = "/erro.jsp";
+                
+                jsp = "/Login.jsp";
             } else {
                 request.getSession().setAttribute("cod_usuario", usr.getCodUsuario());
                 
                 jsp = "/Paginainicial.jsp";
             }
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (ExcecaoNegocio | ExcecaoPersistencia e) {
             jsp = "";
         }
         return jsp;

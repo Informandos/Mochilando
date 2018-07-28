@@ -9,11 +9,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.domain.Cidade;
+import model.domain.Estado;
 import model.domain.Usuario;
 import model.service.implementacao.ManterUsuario;
 import util.db.exception.ExcecaoNegocio;
@@ -36,6 +39,15 @@ public class CadastrarUsuario extends HttpServlet {
         String senha = request.getParameter("senha");
         String sexo = request.getParameter("sexo");
         String email = request.getParameter("email");
+        String cidade = request.getParameter("cidade");
+        String estado = request.getParameter("estado"); 
+        String estados = request.getParameter("estados");  
+        Estado est = new Estado();
+        est.setNomEstado(estado);
+        est.setSigla(estados);
+        Cidade cid = new Cidade();
+        cid.setNomCidade(cidade);
+        cid.setEstado(est);
          Usuario usuario = new Usuario();
          usuario.setNomUsuario(nome);
          usuario.setSobrenomeUsuario(sobrenome);
@@ -43,14 +55,16 @@ public class CadastrarUsuario extends HttpServlet {
          usuario.setTxtSenha(senha);
          usuario.setSexo(sexo);
          usuario.setTxtEmail(email);
+         usuario.setCidade(cid);
          ManterUsuario usu = new ManterUsuario();
         try {
             usu.cadastrar(usuario);
-            jsp = "/Login.jsp";
+          
         } catch (ExcecaoPersistencia | ExcecaoNegocio ex) {
             Logger.getLogger(CadastrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
-         request.getRequestDispatcher(jsp);
+         RequestDispatcher r = request.getRequestDispatcher( "Login.jsp" );
+         r.forward( request, response );
            
        
     }

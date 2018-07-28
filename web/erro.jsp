@@ -13,7 +13,7 @@ erro = (String)request.getAttribute("erro");
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-        <title>Mochilando</title>
+        <title></title>
     </head>
     <body>
         <h2><%=erro%></h2>
