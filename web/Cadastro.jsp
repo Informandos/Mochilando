@@ -1,35 +1,37 @@
-<!DOCTYPE html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <title>Login</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro</title>
+        
+         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     </head>
     <body>
-        <form action="CadastrarUsuario" method="POST">
+        <form action="CadastrarUsuario" method="post">
         <h3>cadastro</h3>
         
-        Nome<br>
+        <a>Nome</a><br>
          <input type="text" name="nome" Value="nome"><br>
-         Sobrenome<br>
+         <a>Sobrenome</a><br>
          <input type="text" name="sobrenome" Value="sobrename"><br>
          <a>Data de nascimento</a><br>
-         <input type="date" name="data"><br>
-         Estado(Sigla)<br>
+         <input type="date" name="data" id="data"><br>
+         <a>Estado(Sigla)</a><br>
          <input type="text" name="estado"><br>
-        Cidade<br>
+         <a>Cidade</a><br>
         <input type="text" name="cidade"><br>
-         E-Mail<br>
+        <a> E-Mail</a><br>
         <input type="text" name="email" Value="E-mail"><br>
-        sexo<br>
+        <a> sexo</a><br>
         <input type="text" name="sexo" ><br>
         
-        Senha<br>
+        <a>Senha</a><br>
         <input type="password" name="senha"><br>
-        confirme a senha<br>
+        <a>confirme a senha</a><br>
         <input type="password" name="confirmacao"><br>
-        <input type="radio" name="termos">Concordo com os
+        <input type="radio" name="termos"><a>Concordo com os</a>
         <a href="Termosdeuso.jsp">Termos e Politica de privacidade</a><br>
         
         <input type="submit" value="Login">
