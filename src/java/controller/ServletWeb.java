@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.RequestDispatcher;
 
-public class SevletWeb extends HttpServlet {
+public class ServletWeb extends HttpServlet {
  private String jsp = "";
   
    @Override
