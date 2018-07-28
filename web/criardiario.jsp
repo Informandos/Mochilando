@@ -15,5 +15,16 @@
         <%@	taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"	%>
         <c:import	url="cabecalho.jsp"	/>
         <h1>Criar diario</h1>
+        <form name="frmCriarDiario" method='post'>
+            <label>Nome do diario:
+                <input type="text" name="nomdiario" id="nomediario" maxlength="50" size="50">    
+            </label><br />
+            <br />
+            <label>Senha:&nbsp;&nbsp;&nbsp;
+                <input type="password" name="senha" id="senha" maxlength="10" size="12">    
+            </label><br />
+            <br />
+        </form>
+
     </body>
 </html>
