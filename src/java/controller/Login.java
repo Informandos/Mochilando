@@ -2,8 +2,8 @@ package controller;
 
 
 import model.domain.Usuario;
-import model.service.implementacao.ManterUsuario;
-import model.service.interfaces.InterfaceManterUsuario;
+import model.service.implementacao;
+import model.service.interfaces;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,7 +31,7 @@ public class Login {
             } else {
                 request.getSession().setAttribute("cod_usuario", usr.getCodUsuario());
                 
-                jsp = "/Cadastro.jsp";
+                jsp = "/Paginainicial.jsp";
             }
 
         } catch (Exception e) {
