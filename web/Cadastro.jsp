@@ -7,21 +7,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <form action="ServletCadastro" method="POST">
+        <form action="CadastrarUsuario" method="POST">
         <h3>cadastro</h3>
         
         Nome<br>
-         <input type="text" name="nome" Value="name"><br>
+         <input type="text" name="nome" Value="nome"><br>
          Sobrenome<br>
          <input type="text" name="sobrenome" Value="sobrename"><br>
-         Data de nascimento<br>
-         <input type="date" nome="data"><br>
+         <a>Data de nascimento</a><br>
+         <input type="date" name="data"><br>
          Estado(Sigla)<br>
-         <input type="text" nome="estado"><br>
+         <input type="text" name="estado"><br>
         Cidade<br>
-        <input type="text" nome="cidade"><br>
+        <input type="text" name="cidade"><br>
          E-Mail<br>
-        <input type="text" name="e-mail" Value="E-mail"><br>
+        <input type="text" name="email" Value="E-mail"><br>
         sexo<br>
         <input type="text" name="sexo" ><br>
         
