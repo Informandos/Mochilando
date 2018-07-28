@@ -10,7 +10,7 @@ import javax.servlet.RequestDispatcher;
 
 public class ServletWeb extends HttpServlet {
 
-    private String jsp = "";
+    String paginaJsp = "";
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,26 +22,14 @@ public class ServletWeb extends HttpServlet {
             Class<?> classe = Class.forName(nomeDaClasse);
             Logica logica = (Logica) classe.newInstance();
             //Recebe a String após a execução da logica
-            String pagina = logica.execute(request, response);
+            paginaJsp = logica.execute(request, response);
             //Faz o forward para a página JSP
-            request.getRequestDispatcher(pagina).forward(request, response);
+            //Redirecionando pagina
+            RequestDispatcher rd = request.getRequestDispatcher(paginaJsp);
+            rd.forward(request, response);
         } catch (Exception e) {
             throw new ServletException("Erro ao direcionar", e);
         }
 
-        String acao = request.getParameter("acao");
-
-        if (acao.equals("Logar")) {
-            jsp = Logar.execute(request);
-        }
-        /*
-        if else(acao.equals("..."))
-            jsp = Logar.execute(request);
-        ...
-         */
-
-        //Redirecionando pagina
-        RequestDispatcher rd = request.getRequestDispatcher(jsp);
-        rd.forward(request, response);
     }
 }
