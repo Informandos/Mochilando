@@ -20,6 +20,10 @@
         <servlet-name>sevletweb</servlet-name>
         <servlet-class>controller.SevletWeb</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletWeb</servlet-name>
+        <servlet-class>controller.ServletWeb</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletCadastro</servlet-name>
         <url-pattern>/ServletCadastro</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>sevletweb</servlet-name>
         <url-pattern>/sevletweb</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletWeb</servlet-name>
+        <url-pattern>/ServletWeb</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

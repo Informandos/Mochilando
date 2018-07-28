@@ -12,13 +12,13 @@
          <script type="text/javascript" language="JavaScript" src="js/webvalida.js"></script>
     </head>
     <body>
-        <form name="Login" method="post">
+        <form name="frmLogin" action="Login" method="post">
         <h1>Login</h1>
         <a> E-Mail</a><br>
         <input type="text" id="email" name="email" ><br>
         <a> Senha </a> <br>
         <input type="password" id="senha" name="senha"><br>
-         <button type="button" onclick="validarCamposLogin()">Acessar</button>
+         <button type="submit" onclick="validarCamposLogin()">Acessar</button>
         </form>
         <div>
             <a href="RecuperacaoDeSenha.jsp">Esqueci a senha</a><br>
