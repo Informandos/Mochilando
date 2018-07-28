@@ -46,7 +46,7 @@ public class CadastrarUsuario extends HttpServlet {
         try {
             usu.cadastrar(usuario);
             jsp = "/Login.jsp";
-        } catch (ExcecaoPersistencia | ExcecaoNegocio ex) {
+        } catch (ExcecaoPersistencia ex) {
             Logger.getLogger(CadastrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
          request.getRequestDispatcher(jsp);
