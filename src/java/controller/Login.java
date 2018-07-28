@@ -28,8 +28,6 @@ public class Login {
 
             if (usr == null) {
                 String erro = "Usuario nao encontrado!";
-                
-                
                 jsp = "/Login.jsp";
             } else {
                 request.getSession().setAttribute("cod_usuario", usr.getCodUsuario());
