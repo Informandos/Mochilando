@@ -18,6 +18,7 @@ import model.domain.Usuario;
 import model.service.implementacao.ManterUsuario;
 import util.db.exception.ExcecaoNegocio;
 import util.db.exception.ExcecaoPersistencia;
+
 /**
  *
  * @author User

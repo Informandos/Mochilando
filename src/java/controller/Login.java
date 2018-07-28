@@ -2,8 +2,8 @@ package controller;
 
 
 import model.domain.Usuario;
-import model.service.implementacao;
-import model.service.interfaces;
+import model.service.implementacao.ManterUsuario;
+import model.service.interfaces.InterfaceManterUsuario;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,7 +27,8 @@ public class Login {
             if (usr == null) {
                 String erro = "Usuario nao encontrado!";
                 request.setAttribute("erro", erro);
-                jsp = "/Login.jsp";
+                
+                jsp = "/erro.jsp";
             } else {
                 request.getSession().setAttribute("cod_usuario", usr.getCodUsuario());
                 
