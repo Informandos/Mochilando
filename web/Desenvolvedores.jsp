@@ -4,6 +4,8 @@
     Author     : User
 --%>
 
+<%@page import="model.domain.Diario"%>
+<%@page import="model.service.interfaces.InterfaceManterAtracao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,5 +20,10 @@
         Felipe Linhares<br>
         Juliana Carvalho<br>
         Lucca Bessa
+        <% Diario diario = new Diario(); 
+        diario.setNomDiario("nome do diario");
+        %>
+        
+        <br>Nome do diario: <% diario.getNomDiario(); %>
     </body>
 </html>
