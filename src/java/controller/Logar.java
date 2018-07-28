@@ -33,7 +33,7 @@ public class Logar implements Logica {
             } else {
                 request.getSession().setAttribute("cod_usuario", usr.getCodUsuario());
                 
-                jsp = "/Paginainicial.jsp";
+                jsp = "paginainicial.jsp";
             }
 
         } catch (ExcecaoNegocio | ExcecaoPersistencia e) {
