@@ -36,6 +36,8 @@
             <button>Sobre</button><button>Diarios</button><button>Preferencias</button><br>
 
             <button>Editar dados cadastrais</button>
+            <input type='hidden' name='table' value='Estado'>
+            <input type='hidden' name='acao' value='alterar'>
 
         </div>
     </body>
