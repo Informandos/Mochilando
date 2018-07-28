@@ -20,27 +20,10 @@
         </script>
     </head>
     <body>
+        <%@	taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"	%>
+        <c:import	url="cabecalho.jsp"	/>
         <div>
-            <div style="position:fixed; top:0px; vertical-align:top; left:0px;">
-                <a href="#">
-                    <button>Pagina Inicial</button><t></t>
-                    <form action="perfil.jsp" method="post" >
-                        <input type="text" name="busca" value="busca" onfocus="this.value = '';" />
-                        <input type="submit" name="Buscar" value="Buscar">
-                    </form>
-                    <form action="perfil.jsp">
 
-                        <input type="submit" size="10" name="perfil" value="Perfil" ></input>
-                    </form>
-
-                    <form action="NovoDiario.jsp">
-
-                        <input type="submit" size="10" name="novoDiario" value="Criar Novo Diario" ></input>
-                    </form>
-
-
-                    <button>Ajuda</button>
-                </a></div>
             <br><br>
             <br><br>
             <center>
