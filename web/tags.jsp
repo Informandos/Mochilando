@@ -1,11 +1,26 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.service.interfaces.InterfaceManterTag"%>
+<%@page import="model.service.implementacao.ManterTag"%>
+<%@page import="java.util.List"%>
+<%@page import="model.domain.Tag"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
+
+<% 
+    InterfaceManterTag mantertag = new ManterTag();
+    List<Tag> lista = new ArrayList();
+    lista = mantertag.pesquisarTodos();
+    String[] desc = new String[4];
+    for(int i=0; i<lista.size(); i++){
+        desc[i] = lista.get(i).getDescTag();
+    }
+ %>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Tags</title>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -23,23 +38,23 @@
                     <div class="form-group" align="center">
                     <div class="row">
                         <div class="col-md-3">
-                            <img name="tag1">
+                            <img name="tag1" src="../web/img/<%System.out.print(desc[0]);%>.jpg">
                             <p name="tag1"></p>
                         </div>
                         <div class="col-md-3">
-                            <img name="tag2">
+                            <img name="tag2" src="../web/img/<%System.out.print(desc[1]);%>.jpg">
                             <p name="tag2"></p>
                         </div>
                         <div class="col-md-3">
-                            <img name="tag3">
+                            <img name="tag3" src="../web/img/<%System.out.print(desc[2]);%>.jpg">
                             <p name="tag3"></p>
                         </div>
                         <div class="col-md-3">
-                            <img name="tag4">
+                            <img name="tag4" src="../web/img/<%System.out.print(desc[3]);%>.jpg">
                             <p name="tag4"></p>
                         </div>
                     </div>
-                    <input align="center" type="submit" name="Editar" value="Editar" class="btn btn-default">
+                    <input align="center" type="submit" name="Editar" value="Editar" class="btn btn-default" onclick="editar_tags.jsp">
 		</div>
 	</form>
 </body>

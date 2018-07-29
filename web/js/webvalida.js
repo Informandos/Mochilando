@@ -16,7 +16,7 @@ function validarCamposLogin() {
         frm.senha.focus();
         return false;
     } else {
-        caminhourl = "/Mochilando/ServletWeb?acao=Logar";
+        caminhourl = "/Mochilando/AnalizarLogin?acao=Logar";
         document.forms[0].action = caminhourl;
         window.document.forms[0].submit();
         return true;
