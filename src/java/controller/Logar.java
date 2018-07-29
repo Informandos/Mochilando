@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import util.db.exception.ExcecaoNegocio;
 import util.db.exception.ExcecaoPersistencia;
 
-public class Logar implements Logica {
+public class Logar {
 
     @SuppressWarnings("static-access")
     public static String execute(HttpServletRequest request) {
@@ -28,16 +28,20 @@ public class Logar implements Logica {
             Usuario usr = manterUsuario.getUserLogin(email, senha);
 
             if (usr == null) {
+                System.out.println("Usuario nao encontrado");
                 String erro = "Usuario nao encontrado!";
-                jsp = "/Login.jsp";
+                request.setAttribute("erro", erro);
+                jsp = "/erro.jsp";
             } else {
-                request.getSession().setAttribute("cod_usuario", usr.getCodUsuario());
                 
-                jsp = "paginainicial.jsp";
+                //request.getSession().setAttribute("codUsuario", ""+usr.getCodUsuario());
+                
+                jsp = "/paginainicial.jsp";
             }
 
-        } catch (ExcecaoNegocio | ExcecaoPersistencia e) {
-            jsp = "";
+        } catch (Exception e) {
+            request.setAttribute("excecao", e.getMessage());
+            jsp = "/erro.jsp";
         }
         return jsp;
     }
@@ -53,8 +57,6 @@ public class Logar implements Logica {
         }
     }
 
-    @Override
-    public String execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
+    
 }
