@@ -13,10 +13,6 @@ import model.domain.Tag;
 import model.service.implementacao.ManterTag;
 import model.service.interfaces.InterfaceManterTag;
 
-/**
- *
- * @author Juliana
- */
 public class ListarTag implements Logica{
 
     @Override
@@ -38,6 +34,7 @@ public class ListarTag implements Logica{
             e.printStackTrace();
             jsp = "";
         }
+        
         return jsp;
     }
     
