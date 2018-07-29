@@ -3,6 +3,11 @@
     Created on : 27/07/2018, 20:50:28
     Author     : Juliana
 --%>
+<%@page import="model.service.implementacao.ManterCidade"%>
+<%@page import="model.service.interfaces.InterfaceManterCidade"%>
+<%@page import="model.service.interfaces.InterfaceManterEstado"%>
+<%@page import="model.service.implementacao.ManterEstado"%>
+<%@page import="model.domain.Estado"%>
 <%@page import="java.util.List"%>
 <%@page import="model.domain.Tag"%>
 <%@page import="java.util.ArrayList"%>
@@ -24,21 +29,26 @@
                 <input type="text" name="nomdiario" id="nomediario" maxlength="50" size="50">    
             </label><br />
             <br />
-            <label>Tags do diario:&nbsp;&nbsp;&nbsp;
-                <% ManterTag tag = new ManterTag(); 
-                  
-                   List<Tag> lista = tag.pesquisarTodos();
-                  for(Tag tagobtida : lista){
+            <label>Estados:
+                <% 
+                  InterfaceManterEstado me = new ManterEstado();
+                  List<Estado> listaEstado = me.pesquisarTodos();
+                  for(Estado estado : listaEstado ){
                       %>
                      
                       <input type="checkbox" name="opcoes" value="tag"/> 
-                      <% tagobtida.getDescTag(); %> 
+                      <%=estado.getNomEstado() %> 
                       <br>
                       
                       <%
                   }
                 %>
             </label><br />
+            <label>Cidades :
+                <%
+                    InterfaceManterCidade mc = new ManterCidade();
+                %>
+            </label><br />    
             <br />
         </form>
 
