@@ -39,7 +39,7 @@ public class Logar {
                 jsp = "/paginainicial.jsp";
             }
 
-        } catch (Exception e) {
+        } catch (ExcecaoNegocio | ExcecaoPersistencia e) {
             request.setAttribute("excecao", e.getMessage());
             jsp = "/erro.jsp";
         }

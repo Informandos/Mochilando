@@ -16,7 +16,7 @@ function validarCamposLogin() {
         frm.senha.focus();
         return false;
     } else {
-        caminhourl = "/Mochilando/ServletWeb?acao=Logar";
+        caminhourl = "/Mochilando/ServletWeb?logica=Logar";
         document.forms[0].action = caminhourl;
         window.document.forms[0].submit();
         return true;
@@ -66,7 +66,7 @@ function validarCamposDiario() {
  Todo que o programa fazer na parte nos html deve passa aqui para depois ir para o controller
  */
 
-function validarCamposLogin() {
+/*function validarCamposLogin() {
     var frm = document.frmLogin;
     var email = frm.email.value;
     var senha = frm.senha.value;
@@ -85,7 +85,7 @@ function validarCamposLogin() {
         window.document.forms[0].submit();
         return true;
     }
-}
+}*/
 /*
  separe cada fução 
  */
