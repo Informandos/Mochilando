@@ -45,9 +45,7 @@
                 %>
             </label><br />
             <label>Cidades :
-                <%
-                    InterfaceManterCidade mc = new ManterCidade();
-                %>
+                
             </label><br />    
             <br />
         </form>

@@ -2,6 +2,8 @@ package controller;
 
 import controller.interfacelogica.Logica;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,25 +12,36 @@ import javax.servlet.RequestDispatcher;
 
 public class ServletWeb extends HttpServlet {
 
-    String paginaJsp = "";
+    private String paginaJsp = "";
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         request.setCharacterEncoding("UTF-8");
         String parametro = request.getParameter("logica");
-        String nomeDaClasse = parametro;
-        try {
-            Class<?> classe = Class.forName(nomeDaClasse);
-            Logica logica = (Logica) classe.newInstance();
-            //Recebe a String após a execução da logica
-            paginaJsp = logica.execute(request, response);
-            //Faz o forward para a página JSP
-            //Redirecionando pagina
+        String nomeDaClasse = "controller." + parametro;
+
+        if (parametro.equals("Logar")) {
+            paginaJsp = Logar.execute(request);
             RequestDispatcher rd = request.getRequestDispatcher(paginaJsp);
             rd.forward(request, response);
-        } catch (Exception e) {
-            throw new ServletException("Erro ao direcionar", e);
+            
+        } else {
+            try {
+                Class classe;
+                classe = Class.forName(nomeDaClasse);
+                Logica logica = (Logica) classe.newInstance();
+                //Recebe a String após a execução da logica
+
+                paginaJsp = logica.execute(request, response);
+
+                //Faz o forward para a página JSP
+                //Redirecionando pagina
+                RequestDispatcher rd = request.getRequestDispatcher(paginaJsp);
+                rd.forward(request, response);
+            } catch (Exception e) {
+                throw new ServletException("Erro ao direcionar", e);
+            }
         }
 
     }
