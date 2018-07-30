@@ -12,7 +12,7 @@
          <script type="text/javascript" language="JavaScript" src="js/webvalida.js"></script>
     </head>
     <body>
-        <form name="frmLogin" action="/Mochilando/AnalizarLogin?acao=UserLogin" method="post">
+        <form name="frmLogin"  method="post">
         <h1>Login</h1>
         <a> E-Mail</a><br>
         <input type="text" id="email" name="email" ><br>

@@ -5,16 +5,16 @@
         <servlet-class>controller.ServletWeb</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AnalizarLogin</servlet-name>
-        <servlet-class>controller.AnalizarLogin</servlet-class>
+        <servlet-name>CriarDiario</servlet-name>
+        <servlet-class>controller.CriarDiario</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ServletWeb</servlet-name>
         <url-pattern>/ServletWeb</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AnalizarLogin</servlet-name>
-        <url-pattern>/AnalizarLogin</url-pattern>
+        <servlet-name>CriarDiario</servlet-name>
+        <url-pattern>/CriarDiario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

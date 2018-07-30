@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -21,16 +22,16 @@
                 <form action="buscar.jsp" method="post" >
                     <input type="text" name="busca" value="busca" onfocus="this.value = '';" />
                     <input type="submit" name="Buscar" value="Buscar">
-                    
+
                 </form>
-                <form action="Perfil.jsp">
+                <form action="ServletWeb?logica=Perfil" method='post'>
 
                     <input type="submit" size="10" name="perfil" value="Perfil" ></input>
                 </form>
 
-                <form action="ServletWeb?logica=CriarDiario">
+                <form action="ServletWeb?logica=CriarDiario" method='post'>
                     <input type="submit" size="10" name="novoDiario" value="Criar Novo Diario" ></input>
-                    
+
                 </form>
 
                 <form action="ajuda.jsp">

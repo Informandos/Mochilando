@@ -1,7 +1,6 @@
 package controller;
 
 
-import controller.interfacelogica.Logica;
 import model.domain.Usuario;
 import model.service.implementacao.ManterUsuario;
 import model.service.interfaces.InterfaceManterUsuario;
@@ -34,12 +33,12 @@ public class Logar {
                 jsp = "/erro.jsp";
             } else {
                 
-                //request.getSession().setAttribute("codUsuario", ""+usr.getCodUsuario());
+                request.getSession().setAttribute("usuario", usr);
                 
                 jsp = "/paginainicial.jsp";
             }
 
-        } catch (Exception e) {
+        } catch (ExcecaoNegocio | ExcecaoPersistencia e) {
             request.setAttribute("excecao", e.getMessage());
             jsp = "/erro.jsp";
         }
@@ -47,7 +46,9 @@ public class Logar {
     }
 
     public static void validarSessao(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Long codUsuario = (Long) request.getSession().getAttribute("cod_suario");
+        Long codUsuario;
+        Usuario us = (Usuario) request.getSession().getAttribute("usuario");
+         codUsuario = us.getCodUsuario();
         String jsp = "";
         if (codUsuario == null) {
             jsp = "/Login.jsp";

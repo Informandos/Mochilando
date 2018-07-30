@@ -4,8 +4,10 @@
     Author     : Juliana
 --%>
 
+<%@page import="controller.Logar"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,7 +15,8 @@
     </head>
     <body>
         <%@	taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"	%>
-        <c:import	url="cabecalho.jsp"/>
+        <c:import url="cabecalho.jsp"/>
+       
         <h1>Pagina inicial</h1>
     </body>
 </html>
