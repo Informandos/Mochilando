@@ -7,7 +7,6 @@ package controller;
 
 import controller.interfacelogica.Logica;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  *
