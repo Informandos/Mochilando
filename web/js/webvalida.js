@@ -7,11 +7,11 @@ function validarCamposLogin() {
     var email = frm.email.value;
     var senha = frm.senha.value;
 
-    if (email == "") {
+    if (email === "") {
         alert("Favor, preencha o campo email!");
         frm.email.focus();
         return false;
-    } else if (senha == "") {
+    } else if (senha === "") {
         alert("Favor, preencha o campo senha!");
         frm.senha.focus();
         return false;
