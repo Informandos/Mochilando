@@ -36,6 +36,7 @@
             String idString = session.getAttribute("codUsuario").toString();
             Long id = Long.parseLong(idString);
             Usuario usuario = manterUsuario.pesquisarPorId(id);
+            usuario = (Usuario) request.getAttribute("usuario");
         %>
         
         <h1>Ola <%=usuario.getNomUsuario()%></h1>
