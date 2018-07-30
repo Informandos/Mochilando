@@ -34,10 +34,8 @@ public class ServletWeb extends HttpServlet {
                 Logica logica = (Logica) classe.newInstance();
                 //Recebe a String após a execução da logica
 
-                //paginaJsp = logica.execute(request);
-                if(parametro.equals("CriarDiario")){
-                    paginaJsp = "/criardiario.jsp";
-                }
+                paginaJsp = logica.execute(request);
+                
                 //Faz o forward para a página JSP
                 //Redirecionando pagina
                 RequestDispatcher rd = request.getRequestDispatcher(paginaJsp);

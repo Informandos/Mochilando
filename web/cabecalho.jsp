@@ -24,7 +24,7 @@
                     <input type="submit" name="Buscar" value="Buscar">
 
                 </form>
-                <form action="Perfil.jsp">
+                <form action="ServletWeb?logica=Perfil" method='post'>
 
                     <input type="submit" size="10" name="perfil" value="Perfil" ></input>
                 </form>

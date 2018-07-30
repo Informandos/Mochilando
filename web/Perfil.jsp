@@ -4,11 +4,20 @@
     Author     : Juliana
 --%>
 
+<%@page import="model.domain.Usuario"%>
+<%@page import="model.service.interfaces.InterfaceManterUsuario"%>
+<%@page import="model.service.implementacao.ManterUsuario"%>
+<%@page import="controller.Logar"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
+
+<% //Logar.validarSessao(request, response); %>
+
 <html>
     <head>
         <title>Tela perfil</title>
+    
         <script language="javascript">
             function Mudarestado(el) {
                 var display = document.getElementById(el).style.display;
@@ -20,8 +29,16 @@
         </script>
     </head>
     <body>
-        <%@	taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"	%>
+        <%@	taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
         <c:import	url="cabecalho.jsp"	/>
+        <% 
+            InterfaceManterUsuario manterUsuario = new ManterUsuario();
+            String idString = session.getAttribute("codUsuario").toString();
+            Long id = Long.parseLong(idString);
+            Usuario usuario = manterUsuario.pesquisarPorId(id);
+        %>
+        
+        <h1>Ola <%=usuario.getNomUsuario()%></h1>
         <div>
 
             <br><br>
