@@ -22,7 +22,7 @@ public class ListarEstado implements Logica {
     
 
     @Override
-    public String execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
+    public String execute(HttpServletRequest req) throws Exception {
         
         String jsp = "";
         try {

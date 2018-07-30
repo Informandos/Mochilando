@@ -26,29 +26,23 @@ import model.service.interfaces.InterfaceManterUsuario;
 public class CriarDiario implements Logica {
 
     @Override
-    public String execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
+    public String execute(HttpServletRequest request) throws Exception {
         String jsp = "";
         try {
-            //Pegando o codigo do usuario para obter o usuario que tem aquele id
-            /*Long codUsuario = Long.parseLong(req.getParameter("codUsuario"));
-            InterfaceManterUsuario manterUsuario = new ManterUsuario();
-            Usuario usuarioCorrente = manterUsuario.pesquisarPorId(codUsuario);
-            req.setAttribute("usuarioCorrente", usuarioCorrente);*/
-            //Pegando todas as tags
             InterfaceManterTag manterTag = new ManterTag();
             List<Tag> listaTag = manterTag.pesquisarTodos();
-            req.setAttribute("listaTag", listaTag);
+            request.setAttribute("listaTag", listaTag);
             //Pegando todos os estados
             InterfaceManterEstado manterEstado = new ManterEstado();
             List<Estado> listaEstado = manterEstado.pesquisarTodos();
-            req.setAttribute("listaEstado", listaEstado);
+            request.setAttribute("listaEstado", listaEstado);
             
             if(listaEstado != null){
                 
                 jsp = "/criardiario.jsp";
             }else{
-                String erro = "Ocorreu erro ao Alterar Marca!";
-                req.setAttribute("erro", erro);
+                String erro = "Ocorreu erro ao criar diario!";
+                request.setAttribute("erro", erro);
                 jsp = "/erro.jsp";
             }
         } catch (Exception e) {
