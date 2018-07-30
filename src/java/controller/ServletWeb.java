@@ -19,6 +19,7 @@ public class ServletWeb extends HttpServlet {
 
         request.setCharacterEncoding("UTF-8");
         String parametro = request.getParameter("logica");
+        
         String nomeDaClasse = "controller." + parametro;
         
         //Logar nao implementa a interface logica

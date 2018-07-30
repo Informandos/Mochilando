@@ -33,7 +33,8 @@ public class Logar {
                 jsp = "/erro.jsp";
             } else {
                 
-                request.getSession().setAttribute("usuario", usr);
+                request.getSession().setAttribute("codUsuario", usr.getCodUsuario());
+                
                 
                 jsp = "/paginainicial.jsp";
             }
@@ -46,11 +47,11 @@ public class Logar {
     }
 
     public static void validarSessao(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Long codUsuario;
-        Usuario us = (Usuario) request.getSession().getAttribute("usuario");
-         codUsuario = us.getCodUsuario();
-        String jsp = "";
+        String stringCodUsuario = request.getSession().getAttribute("codUsuario").toString();
+        Long codUsuario = Long.parseLong(stringCodUsuario);
+        
         if (codUsuario == null) {
+            String jsp = "";
             jsp = "/Login.jsp";
             //Redirecionando pagina
             RequestDispatcher rd = request.getRequestDispatcher(jsp);
