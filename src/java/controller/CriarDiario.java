@@ -27,29 +27,17 @@ public class CriarDiario implements Logica {
 
     @Override
     public String execute(HttpServletRequest request) throws Exception {
-        String jsp = "";
-        try {
-            InterfaceManterTag manterTag = new ManterTag();
+
+        /*InterfaceManterTag manterTag = new ManterTag();
             List<Tag> listaTag = manterTag.pesquisarTodos();
             request.setAttribute("listaTag", listaTag);
             //Pegando todos os estados
             InterfaceManterEstado manterEstado = new ManterEstado();
             List<Estado> listaEstado = manterEstado.pesquisarTodos();
-            request.setAttribute("listaEstado", listaEstado);
-            
-            if(listaEstado != null){
-                
-                jsp = "/criardiario.jsp";
-            }else{
-                String erro = "Ocorreu erro ao criar diario!";
-                request.setAttribute("erro", erro);
-                jsp = "/erro.jsp";
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            jsp = "";
-        }
+            request.setAttribute("listaEstado", listaEstado);*/
+        String jsp = "/criardiario.jsp";
+
         return jsp;
     }
-    
+
 }

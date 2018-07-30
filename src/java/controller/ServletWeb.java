@@ -20,7 +20,8 @@ public class ServletWeb extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String parametro = request.getParameter("logica");
         String nomeDaClasse = "controller." + parametro;
-
+        
+        //Logar nao implementa a interface logica
         if (parametro.equals("Logar")) {
             paginaJsp = Logar.execute(request);
             RequestDispatcher rd = request.getRequestDispatcher(paginaJsp);
@@ -28,13 +29,15 @@ public class ServletWeb extends HttpServlet {
             
         } else {
             try {
-                Class classe;
+                Class<?> classe;
                 classe = Class.forName(nomeDaClasse);
                 Logica logica = (Logica) classe.newInstance();
                 //Recebe a String após a execução da logica
 
-                paginaJsp = logica.execute(request);
-
+                //paginaJsp = logica.execute(request);
+                if(parametro.equals("CriarDiario")){
+                    paginaJsp = "/criardiario.jsp";
+                }
                 //Faz o forward para a página JSP
                 //Redirecionando pagina
                 RequestDispatcher rd = request.getRequestDispatcher(paginaJsp);
