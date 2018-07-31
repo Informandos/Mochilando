@@ -5,10 +5,12 @@
         <group>
             <file>file:/C:/Users/Juliana/Documents/CEFET/Repositorio/Mochilandocore/Mochilando/web/paginainicial.jsp</file>
             <file>file:/C:/Users/Juliana/Documents/CEFET/Repositorio/Mochilandocore/Mochilando/web/Perfil.jsp</file>
+            <file>file:/C:/Users/Juliana/Documents/CEFET/Repositorio/Mochilandocore/Mochilando/web/tags.jsp</file>
             <file>file:/C:/Users/Juliana/Documents/CEFET/Repositorio/Mochilandocore/Mochilando/src/java/controller/Perfil.java</file>
+            <file>file:/C:/Users/Juliana/Documents/CEFET/Repositorio/Mochilandocore/Mochilando/web/preferencias.jsp</file>
             <file>file:/C:/Users/Juliana/Documents/CEFET/Repositorio/Mochilandocore/Mochilando/src/java/controller/ServletWeb.java</file>
-            <file>file:/C:/Users/Juliana/Documents/CEFET/Repositorio/Mochilandocore/Mochilando/src/java/controller/Logar.java</file>
             <file>file:/C:/Users/Juliana/Documents/CEFET/Repositorio/Mochilandocore/Mochilando/web/cabecalho.jsp</file>
+            <file>file:/C:/Users/Juliana/Documents/CEFET/Repositorio/Mochilandocore/Mochilando/src/java/controller/Logar.java</file>
         </group>
     </open-files>
 </project-private>
