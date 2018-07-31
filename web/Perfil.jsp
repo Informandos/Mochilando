@@ -36,7 +36,16 @@
         <div>
             <H1>Perfil </H1>
             <img src="" width="100" height="100"><br>
-            <button type="button" onclick="Mudarestado('minhaDiv')">Sobre</button><button>Meus Diarios</button><button>Minhas tags </button><br>
+            <button type="button" onclick="Mudarestado('minhaDiv')">Sobre</button>
+            <br>
+            
+            <form action="ServletWeb?logica=ListarTagUsuario" method='post'>
+                <input type="submit" size="10" name="listarTag" value="Meus diarios" ></input>
+            </form>
+            
+            <form action="ServletWeb?logica=ListarDiarioUsuario" method='post'>
+                <input type="submit" size="10" name="listarTag" value="Meus diarios" ></input>
+            </form>
 
             <div id="minhaDiv" style="display:none">
                 <br><label> <b>Nome: </b>  ${requestScope.nome}</label>
@@ -45,11 +54,7 @@
                 <br><label> <b>Sexo: </b>  ${requestScope.sexo}</label>
                 <br><label> <b>Cidade: </b> ${requestScope.cidade} </label>
 
-                <br><button>Editar dados cadastrais</button>
             </div>
-
-            <input type='hidden' name='table' value='Estado'>
-            <input type='hidden' name='acao' value='alterar'>
 
         </div>
     </body>

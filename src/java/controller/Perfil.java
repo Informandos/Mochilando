@@ -26,7 +26,11 @@ public class Perfil implements Logica {
         String paginaJsp = "";
         
         String strCodUsuario = request.getSession().getAttribute("codUsuario").toString();
-        Long codUsuario = Long.parseLong(strCodUsuario);
+        Long codUsuario= Long.parseLong(strCodUsuario);
+        
+        request.getSession().setAttribute("codUsuario", codUsuario); 
+        
+        codUsuario = Long.parseLong(strCodUsuario);
         InterfaceManterUsuario manterUsuario = new ManterUsuario();
         
         Usuario usuario = manterUsuario.pesquisarPorId(codUsuario);
@@ -38,11 +42,13 @@ public class Perfil implements Logica {
             paginaJsp = "/erro.jsp";
         } else {
             request.setAttribute("usuario", usuario);
+            
             if(usuario.getDatNascimento()!=null){
                 request.setAttribute("datanasc", usuario.getDatNascimento());
             }else{
                 request.setAttribute("datanasc", "01/01/2018");
             }
+            
             request.setAttribute("nome", usuario.getNomUsuario()+" "+usuario.getSobrenomeUsuario());
             request.setAttribute("email", usuario.getTxtEmail());
             request.setAttribute("sexo", usuario.getSexo());
