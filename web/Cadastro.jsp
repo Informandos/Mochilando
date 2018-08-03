@@ -9,7 +9,7 @@
          <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     </head>
     <body>
-        <form action="CadastrarUsuario" method="post">
+        <form action="ServletWeb?logica=CadastrarUsuario" method="post">
         <h3>cadastro</h3>
         
         <a>Nome</a><br>

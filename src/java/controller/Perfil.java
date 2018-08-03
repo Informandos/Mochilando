@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -61,12 +61,14 @@ public class Perfil implements Logica {
     }
 
 }
+/*
 =======
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/*
 package controller;
 
 import controller.interfacelogica.Logica;
@@ -77,6 +79,7 @@ import model.domain.Usuario;
  *
  * @author Juliana
  */
+/*
 public class Perfil implements Logica {
 
     @Override
@@ -96,3 +99,4 @@ public class Perfil implements Logica {
 
 }
 >>>>>>> 945a4a25c12f4e7aa73abe761469f6525e3fc809
+*/

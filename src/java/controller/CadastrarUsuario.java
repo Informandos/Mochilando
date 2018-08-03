@@ -5,6 +5,7 @@
  */
 package controller;
 
+import controller.interfacelogica.Logica;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
@@ -27,12 +28,11 @@ import util.db.exception.ExcecaoPersistencia;
  * @author User
  */
 @WebServlet(name = "CadastrarUsuario", urlPatterns = {"/CadastrarUsuario"})
-public class CadastrarUsuario extends HttpServlet {
-  
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        try {
+public class CadastrarUsuario extends HttpServlet implements Logica{
+   @Override
+    public String execute(HttpServletRequest request) throws Exception {
+       
+    try {
             String jsp = "";
             String nome = request.getParameter("nome");
             String sobrenome = request.getParameter("sobrenome");
@@ -64,10 +64,12 @@ public class CadastrarUsuario extends HttpServlet {
         } catch (ExcecaoPersistencia | ExcecaoNegocio ex) {
             Logger.getLogger(CadastrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
-           
-       
+       return "index.jsp";
     }
-
-   
-
+     @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+    }
 }
+
