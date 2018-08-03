@@ -66,10 +66,8 @@ public class CadastrarUsuario extends HttpServlet implements Logica{
         }
        return "index.jsp";
     }
-     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+     
         
-    }
+    
 }
 

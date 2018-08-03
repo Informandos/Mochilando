@@ -36,7 +36,7 @@
         <input type="radio" name="termos"><a>Concordo com os</a>
         <a href="Termosdeuso.jsp">Termos e Politica de privacidade</a><br>
         
-        <input type="submit" value="Login">
+        <input type="submit" value="Cadastrar">
       
         </form>
         <div>
