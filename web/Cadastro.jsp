@@ -9,7 +9,7 @@
          <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     </head>
     <body>
-        <form action="CadastrarUsuario" method="post">
+        <form action="ServletWeb?logica=CadastrarUsuario" method="post">
         <h3>cadastro</h3>
         
         <a>Nome</a><br>
@@ -17,7 +17,7 @@
          <a>Sobrenome</a><br>
          <input type="text" name="sobrenome" Value="sobrename"><br>
          <a>Data de nascimento</a><br>
-         <input type="text" name="data" id="data"><br>
+         <input type="date" name="data" id="data"><br>
          <a>Estado </a><br>
          <input type="text" name="estado"><br>
          <a>Estado(Sigla)</a><br>
@@ -36,7 +36,7 @@
         <input type="radio" name="termos"><a>Concordo com os</a>
         <a href="Termosdeuso.jsp">Termos e Politica de privacidade</a><br>
         
-        <input type="submit" value="Login">
+        <input type="submit" value="Cadastrar">
       
         </form>
         <div>

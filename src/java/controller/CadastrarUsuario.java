@@ -5,8 +5,10 @@
  */
 package controller;
 
+import controller.interfacelogica.Logica;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -18,6 +20,8 @@ import javax.servlet.http.HttpServletResponse;
 import model.domain.Cidade;
 import model.domain.Estado;
 import model.domain.Usuario;
+import model.service.implementacao.ManterCidade;
+import model.service.implementacao.ManterEstado;
 import model.service.implementacao.ManterUsuario;
 import util.db.exception.ExcecaoNegocio;
 import util.db.exception.ExcecaoPersistencia;
@@ -27,12 +31,11 @@ import util.db.exception.ExcecaoPersistencia;
  * @author User
  */
 @WebServlet(name = "CadastrarUsuario", urlPatterns = {"/CadastrarUsuario"})
-public class CadastrarUsuario extends HttpServlet {
-  
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        try {
+public class CadastrarUsuario extends HttpServlet implements Logica{
+   @Override
+    public String execute(HttpServletRequest request) throws Exception {
+       
+    try {
             String jsp = "";
             String nome = request.getParameter("nome");
             String sobrenome = request.getParameter("sobrenome");
@@ -43,20 +46,26 @@ public class CadastrarUsuario extends HttpServlet {
             String cidade = request.getParameter("cidade");
             String estado = request.getParameter("estado");
             String estados = request.getParameter("estados");
+            /*
             Estado est = new Estado();
             est.setNomEstado(estado);
             est.setSigla(estados);
+            ManterEstado mest = new ManterEstado();
+            mest.cadastrar(est);
             Cidade cid = new Cidade();
             cid.setNomCidade(cidade);
             cid.setEstado(est);
+            ManterCidade mcid = new ManterCidade();
+            mcid.cadastrar(cid);
+            */
             Usuario usuario = new Usuario();
             usuario.setNomUsuario(nome);
             usuario.setSobrenomeUsuario(sobrenome);
-            usuario.setDatNascimento(data);
+            usuario.setDatNascimento(new SimpleDateFormat("yyyy-MM-dd").parse(data));
             usuario.setTxtSenha(senha);
             usuario.setSexo(sexo);
             usuario.setTxtEmail(email);
-            usuario.setCidade(cid);
+            usuario.setCidade(null);
             usuario.setImgPerfil(null);
             usuario.setCodUsuario(null);
             ManterUsuario usu = new ManterUsuario();
@@ -64,10 +73,10 @@ public class CadastrarUsuario extends HttpServlet {
         } catch (ExcecaoPersistencia | ExcecaoNegocio ex) {
             Logger.getLogger(CadastrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
-           
-       
+       return "index.jsp";
     }
-
-   
-
+     
+        
+    
 }
+
