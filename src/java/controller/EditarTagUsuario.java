@@ -1,6 +1,8 @@
 package controller;
 
 import controller.interfacelogica.Logica;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -8,7 +10,9 @@ public class EditarTagUsuario implements Logica {
 
     @Override
     public String execute(HttpServletRequest req) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String descTag;
+        descTag = req.getParameter("tag");
+        return null;
     }
     
 }

@@ -32,7 +32,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<form action="Servlet" method="POST">
+	<form action="ServletWeb?logica=ListarTag" method="POST" name="frmTags">
 		<h1 align="center">Tags</h1>
 		<div class="form-group" align="center">
                     <div class="form-group" align="center">
@@ -54,7 +54,7 @@
                             <p name="tag4"></p>
                         </div>
                     </div>
-                    <input align="center" type="submit" name="Editar" value="Editar" class="btn btn-default" onclick="editar_tags.jsp">
+                    <input align="center" type="submit" name="Editar" value="Editar" class="btn btn-default" onclick="validarTags()">
 		</div>
 	</form>
 </body>

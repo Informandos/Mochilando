@@ -62,6 +62,32 @@ function validarCamposDiario() {
         return true;
     }
 }
+/*
+ separe cada fução 
+ */
+/*---------------------------------------------------------------------------------------------------*/
+function validarCamposEditarTag(){
+    var frm = document.frmEditarTag;
+    var tag = frm.tag.values;
+    
+    if(tag.length === 4){
+        caminhoURL = "/Mochilando/ServelWeb?logica=EditarTagUsuario";
+        document.forms[0].action = caminhoURL;
+        window.document.forms[0].submit();
+        return true;
+    }else{
+        alert("Favor selecionar 4 tags");
+        return false;
+    }
+}
+/*
+ separe cada fução 
+ */
+/*---------------------------------------------------------------------------------------------------*/
+function validarTags(){
+    var frm = document.frmTags;
+    
+}
 /* 
  Todo que o programa fazer na parte nos html deve passa aqui para depois ir para o controller
  */
