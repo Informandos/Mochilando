@@ -8,6 +8,7 @@ package controller;
 import controller.interfacelogica.Logica;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -45,6 +46,7 @@ public class CadastrarUsuario extends HttpServlet implements Logica{
             String cidade = request.getParameter("cidade");
             String estado = request.getParameter("estado");
             String estados = request.getParameter("estados");
+            /*
             Estado est = new Estado();
             est.setNomEstado(estado);
             est.setSigla(estados);
@@ -55,14 +57,15 @@ public class CadastrarUsuario extends HttpServlet implements Logica{
             cid.setEstado(est);
             ManterCidade mcid = new ManterCidade();
             mcid.cadastrar(cid);
+            */
             Usuario usuario = new Usuario();
             usuario.setNomUsuario(nome);
             usuario.setSobrenomeUsuario(sobrenome);
-            usuario.setDatNascimento(data);
+            usuario.setDatNascimento(new SimpleDateFormat("yyyy-MM-dd").parse(data));
             usuario.setTxtSenha(senha);
             usuario.setSexo(sexo);
             usuario.setTxtEmail(email);
-            usuario.setCidade(cid);
+            usuario.setCidade(null);
             usuario.setImgPerfil(null);
             usuario.setCodUsuario(null);
             ManterUsuario usu = new ManterUsuario();
