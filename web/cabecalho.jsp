@@ -16,7 +16,7 @@
 
         <div style=" top:0px; vertical-align:top; left:0px;">
             <a href="#">
-                <form action="paginainicial.jsp" method="post" >
+                <form action="ServletWeb?logica=Logar" method="post" >
                     <input type="submit" name="paginainicial" value="Pagina Inicial">
                 </form><t></t>
                 <form action="buscar.jsp" method="post" >
