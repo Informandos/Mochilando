@@ -40,7 +40,7 @@
             <br>
             
             <form action="ServletWeb?logica=ListarTagUsuario" method='post'>
-                <input type="submit" size="10" name="listarTag" value="Meus diarios" ></input>
+                <input type="submit" size="10" name="listarTag" value="Minhas tags" ></input>
             </form>
             
             <form action="ServletWeb?logica=ListarDiarioUsuario" method='post'>

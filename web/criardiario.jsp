@@ -28,26 +28,36 @@
             <label>Titulo *:
                 <input type="text" name="nomdiario" id="nomediario" maxlength="50" size="50">    
             </label><br />
-            <br />
-            <label>Estados:
+            
+            
+            <br /><label>Estados:
+                <select>
                 <% 
                   InterfaceManterEstado me = new ManterEstado();
                   List<Estado> listaEstado = me.pesquisarTodos();
                   for(Estado estado : listaEstado ){
                       %>
-                     
-                      <input type="checkbox" name="opcoes" value="tag"/> 
-                      <%=estado.getNomEstado() %> 
-                      <br>
-                      
+                      <option><%=estado.getNomEstado() %></option> 
                       <%
                   }
                 %>
+                </select>
             </label><br />
-            <label>Cidades :
-                
+            
+            <br /><label>Estados:
+                <select>
+                <% 
+                  InterfaceManterEstado me = new ManterEstado();
+                  List<Estado> listaEstado = me.pesquisarTodos();
+                  for(Estado estado : listaEstado ){
+                      %>
+                      <option><%=estado.getNomEstado() %></option> 
+                      <%
+                  }
+                %>
+                </select>
             </label><br />    
-            <br />
+            
         </form>
 
     </body>
