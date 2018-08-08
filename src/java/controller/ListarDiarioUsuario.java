@@ -30,7 +30,7 @@ public class ListarDiarioUsuario implements Logica {
 
         if (listaDiario != null) {
             request.setAttribute("listaDiario", listaDiario);
-            paginaJsp = "/meusdiarios";
+            paginaJsp = "/meusdiarios.jsp";
         } else {
             
             String erro = "Usuario sem diario!";

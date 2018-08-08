@@ -22,17 +22,17 @@ public class ListarTagUsuario implements Logica{
             req.getSession().setAttribute("codUsuario", codUsuario);
             
             ManterUsuarioTag manterUsuarioTag = new ManterUsuarioTag();
-            List<UsuarioTag> listTagPorUsuario =  manterUsuarioTag.pesquisarPorCodUsuario(codUsuario);
+            List<UsuarioTag> listaUsuarioTag =  manterUsuarioTag.pesquisarPorCodUsuario(codUsuario);
             
-            List listDescTagUsuario = null;
-            for(UsuarioTag usuarioTag: listTagPorUsuario){
-                listDescTagUsuario.add( usuarioTag.getTag().getDescTag());
+            List listaDescUsuarioTag = null;
+            for(UsuarioTag usuarioTag: listaUsuarioTag){
+                listaDescUsuarioTag.add( usuarioTag.getTag().getDescTag());
             }
             
             
-            if (listTagPorUsuario!= null) {
+            if (listaDescUsuarioTag!= null) {
                 
-                req.setAttribute("listaTagsUsuario", listDescTagUsuario);
+                req.setAttribute("listaTagsUsuario", listaDescUsuarioTag);
                 jsp = "/tagsUsuario.jsp";
             } else {
                 String erro = "Nao existem tags cadastradas!";
