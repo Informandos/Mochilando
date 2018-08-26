@@ -25,14 +25,9 @@ public class Perfil implements Logica {
     public String execute(HttpServletRequest request) throws Exception {
         String paginaJsp = "";
         
-        String strCodUsuario = request.getSession().getAttribute("codUsuario").toString();
-        Long codUsuario = Long.parseLong(strCodUsuario);
-        InterfaceManterUsuario manterUsuario = new ManterUsuario();
-        
-        Usuario usuario = manterUsuario.pesquisarPorId(codUsuario);
+        Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
         
         if (usuario == null) {
-            System.out.println("Usuario nao encontrado");
             String erro = "Usuario nao encontrado!";
             request.setAttribute("erro", erro);
             paginaJsp = "/erro.jsp";

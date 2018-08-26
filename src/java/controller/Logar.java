@@ -44,8 +44,8 @@ public class Logar {
                 request.setAttribute("erro", erro);
                 jsp = "/erro.jsp";
             } else {
-                
-                request.getSession().setAttribute("codUsuario", usr.getCodUsuario());
+                //Guarda o objeto usuario na sessao;
+                request.getSession().setAttribute("usuario", usr);
                 
                 //Obtem dados do usuario para exibir seus diarios no jsp a ser enviado (pagina inicial)
                 //Busca por todos os diarios que tem alguma tag nesse conjunto de tags do usuario
@@ -81,10 +81,9 @@ public class Logar {
     }
 
     public static void validarSessao(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String stringCodUsuario = request.getSession().getAttribute("codUsuario").toString();
-        Long codUsuario = Long.parseLong(stringCodUsuario);
+        Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
         
-        if (codUsuario == null) {
+        if (usuario == null) {
             String jsp = "";
             jsp = "/Login.jsp";
             //Redirecionando pagina
