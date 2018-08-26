@@ -26,37 +26,11 @@
         <h1>Novo diario</h1>
         <form name="frmCriarDiario" method='post'>
             <label>Titulo *:
-                <input type="text" name="nomdiario" id="nomediario" maxlength="50" size="50">    
+                <input type="text" name="nomDiario" id="nomeDiario" maxlength="50" size="50">    
             </label><br />
             
             
-            <br /><label>Estados:
-                <select>
-                <% 
-                  InterfaceManterEstado me = new ManterEstado();
-                  List<Estado> listaEstado = me.pesquisarTodos();
-                  for(Estado estado : listaEstado ){
-                      %>
-                      <option><%=estado.getNomEstado() %></option> 
-                      <%
-                  }
-                %>
-                </select>
-            </label><br />
             
-            <br /><label>Estados:
-                <select>
-                <% 
-                  InterfaceManterEstado me = new ManterEstado();
-                  List<Estado> listaEstado = me.pesquisarTodos();
-                  for(Estado estado : listaEstado ){
-                      %>
-                      <option><%=estado.getNomEstado() %></option> 
-                      <%
-                  }
-                %>
-                </select>
-            </label><br />    
             
         </form>
 
