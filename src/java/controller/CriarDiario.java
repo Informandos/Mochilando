@@ -40,7 +40,7 @@ public class CriarDiario implements Logica {
         
         InterfaceManterTipoAtracao manterTipoAtraco = new ManterTipoAtracao();
 
-        String jsp = "/criardiario.jsp";
+        String jsp = "/criarDiario.jsp";
 
         return jsp;
     }

@@ -27,7 +27,7 @@ import util.pesquisas.AtualizacaoDiarios;
 public class Logar {
 
     @SuppressWarnings("static-access")
-    public static String execute(HttpServletRequest request) {
+    public static String execute(HttpServletRequest request) throws Exception {
 
         String jsp = "";
 
@@ -47,30 +47,9 @@ public class Logar {
                 //Guarda o objeto usuario na sessao;
                 request.getSession().setAttribute("usuario", usr);
                 
-                //Obtem dados do usuario para exibir seus diarios no jsp a ser enviado (pagina inicial)
-                //Busca por todos os diarios que tem alguma tag nesse conjunto de tags do usuario
-                List<Diario> listaDiario = null;
+                PaginaInicial paginaInicial = new PaginaInicial();
                 
-                AtualizacaoDiarios atualizacao = new AtualizacaoDiarios();
-                //listaDiario = atualizacao.atualizar(usr.getCodUsuario());*/
-                
-                Diario diarioSegundo = new Diario();
-                diarioSegundo.setCodDiario(1L);
-                diarioSegundo.setNomDiario("nomdiario2");
-                
-                Diario diarioSegundot = new Diario();
-                diarioSegundot.setCodDiario(2L);
-                diarioSegundot.setNomDiario("nomdiario3");
-                
-                List<Diario> teste = new ArrayList();
-                teste.add(diarioSegundo);
-                teste.add(diarioSegundot);
-                
-                request.setAttribute("listadiario", teste);
-                
-                
-                
-                jsp = "/paginainicial.jsp";
+                jsp = paginaInicial.execute(request);
             }
 
         } catch (ExcecaoNegocio | ExcecaoPersistencia e) {

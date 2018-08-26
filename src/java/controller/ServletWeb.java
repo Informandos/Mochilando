@@ -24,7 +24,11 @@ public class ServletWeb extends HttpServlet {
         
         //Logar nao implementa a interface logica
         if (parametro.equals("Logar")) {
-            paginaJsp = Logar.execute(request);
+            try {
+                paginaJsp = Logar.execute(request);
+            } catch (Exception ex) {
+                Logger.getLogger(ServletWeb.class.getName()).log(Level.SEVERE, null, ex);
+            }
             RequestDispatcher rd = request.getRequestDispatcher(paginaJsp);
             rd.forward(request, response);
             

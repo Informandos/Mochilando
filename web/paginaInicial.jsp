@@ -21,18 +21,6 @@
         <c:import url="cabecalho.jsp"/>
 
         <h1>Pagina inicial</h1>
-        <%
-            List<Diario> listaDiario = (List<Diario>) request.getAttribute("listadiario");
-            for (Diario diariod : listaDiario) {
-        %>
-        <hr>
-        <br>Titulo:  <%=diariod.getNomDiario()%>
-        <br>Autor: <%=diariod.getUsuario() %>
-        <br>Texto: <%=diariod.getTxtDiario() %>
-        <br><button>Ver diario completo </button>
-        <hr>
-        <%
-            }
-        %>
+        
     </body>
 </html>
